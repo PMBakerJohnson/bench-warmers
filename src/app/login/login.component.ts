@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
   //constructor(private apiConnection: ApiConnectionService, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
-    var indexBtn = document.getElementById("indexBtn");
-    indexBtn.style.display = "none";
   }
   /*login() {
       if (this.apiConnection.checkLogin(this.userLogin.get('username').toString(), this.userLogin.get('password').toString())) {
