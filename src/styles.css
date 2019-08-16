@@ -12,13 +12,15 @@ h2{
     border: 3px solid darkslategray;
     width: 25%;
     text-align: center;
-    font-size: 4em;
+    font-size: 4vw;
     position: relative; 
     left: 10%;   
     top: 1vw; 
     background-color: lightgray;
     border-radius: 7px;
 }
+
+
 
 button{
     border: 1px solid slategray;
@@ -89,6 +91,30 @@ input{
     width: 30vw;
     display: inline-block;
     margin: 5px;
+}
+
+.list{
+    border: 1px solid black;
+    width: 20vw; 
+    height: 25vw;
+    overflow-y: scroll;
+    float: right;
+    right: 5vw;
+    align-content: center;
+}
+
+
+.list-item{
+    position: relative;
+    align-content: center;
+    border: 1px solid black;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, black, gray);
+    margin: 2px;
+}
+
+.list-item p{
+    border: 1px solid blue;
 }
 
 /*grid format*/
