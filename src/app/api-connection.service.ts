@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,14 @@ export class ApiConnectionService {
       username: username,
       password: password
     };
-    this.httpClient.get<boolean>('http:/localhost:44314/api/values/', { params })
-    .subscribe((data: any) => { this.valid = data.valid; });
-    return this.valid;
+    return this.httpClient.get<boolean>(environment.apiUrl, { params });
   }
 
   registerUser(username: string, password: string) {
-    this.httpClient.post('http:/localhost:44314/register/', 'username=' + username + '&password=' + password);
+    const params = {
+      username: username,
+      password: password
+    };
+    this.httpClient.post(environment.apiUrl, { params });
   }
 }

@@ -11,6 +11,7 @@ import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  valid: boolean;
   userLogin = new FormGroup ({
     username: new FormControl(''),
     password: new FormControl('')
@@ -20,8 +21,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
   login() {
-      if (this.apiConnection.checkLogin(this.userLogin.get('username').toString(), this.userLogin.get('password').toString())) {
+      this.apiConnection.checkLogin(this.userLogin.get('username').toString(), this.userLogin.get('password').toString())
+        .subscribe((data: boolean) => { this.valid = data; });
+      if (this.valid) {
         this.isValid(this.userLogin.get('username').toString());
       } else {
         window.alert('Login failed, please try again!');
