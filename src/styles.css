@@ -3,3 +3,115 @@
 body{
     background-color: gray;
 }
+
+
+
+/*global*/
+
+h2{
+    border: 3px solid darkslategray;
+    width: 25%;
+    text-align: center;
+    font-size: 4em;
+    position: relative; 
+    left: 10%;   
+    top: 1vw; 
+    background-color: lightgray;
+    border-radius: 7px;
+}
+
+button{
+    border: 1px solid slategray;
+    padding: 3px; margin: 5px;
+    width: 10vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-style: none;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom right, gray, white);
+}
+
+button:hover{
+    background-image: linear-gradient(to bottom right, white, gray)
+}
+
+
+footer{
+    border: 1px solid blue;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 1.5vw;
+    background-color: darkgray;
+}
+
+footer a{
+    padding: 0;
+    margin: 2px;
+    margin-right: 5px;
+}
+
+label{
+    border: 1px solid darkslategray;
+    background-color: lightgray;
+    position: relative;
+    display: block;
+    width: 15vw;
+    height: 1.7vw;
+    text-align: center;
+    transform: skew(-20deg);
+    border-radius: 10px 3px 10px 3px;
+    margin: 5px;
+    
+}
+
+input{
+    border: 2px solid black;
+    width: 25vw;
+    height: 1.7vw;
+    background-color: silver;
+}
+
+/*Id and class*/
+#nav-bar{
+    border: 1px solid darkgray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: darkslategray;
+    height: 3vw;
+    width: 100%;
+    padding: 0;
+}
+
+.user-input{
+    width: 30vw;
+    display: inline-block;
+    margin: 5px;
+}
+
+/*grid format*/
+
+/*format is: blocktype-col#-row#*/
+    /*1 row*/
+        /*button blocks*/
+.btn-block-1-2{
+    padding: 2px; 
+    width: auto;
+    height: 2.1vw;
+}
+
+
+
+        /*input blocks*/
+.input-1-2{
+    width: 30vw;
+    height: auto;
+    padding: 2px;
+    position: relative;
+    float: right;
+    right: 5vw;
+}
+
+
