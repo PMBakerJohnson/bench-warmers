@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ApiConnectionService } from '../api-connection.service';
 
 @Component({
   selector: 'app-login',
@@ -7,18 +8,18 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user = new FormGroup ({
+  userLogin = new FormGroup ({
     username: new FormControl(''),
     password: new FormControl('')
   })
 
-  constructor() { }
+  constructor(private apiConnection: ApiConnectionService) { }
 
   ngOnInit() {
   }
 
   login() {
-
+    this.apiConnection.checkLogin(this.userLogin.get('username').toString(), this.userLogin.get('password').toString())
   }
 
 }

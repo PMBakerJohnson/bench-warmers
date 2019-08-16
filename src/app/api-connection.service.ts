@@ -11,9 +11,6 @@ export class ApiConnectionService {
   constructor(private httpClient: HttpClient) { }
 
   checkLogin(username: string, password: string) {
-    URL: "http:/localhost:44314/login/";
-
-    return this.httpClient.post(this.URL, "username=" + username + "&password=" + password);
-
+    return this.httpClient.post("http:/localhost:44314/login/", "username=" + username + "&password=" + password);
   }
 }
