@@ -1,1 +1,34 @@
-<p>login works!</p>
+<h2>Login</h2>
+
+    <div style="width: 25%; float: right;">
+        <nav id="nav-bar">
+            <div id="indexBtn" class="btn-block-1-2" style="float: right">
+                <a routerLink="/index"><button >Home</button></a>
+                <a routerLink="/register"><button>Register</button></a>
+            </div>
+        </nav>
+
+        <div class="input-1-2">
+            <div class="user-input">
+                <label>Username</label>
+                <input type="text"
+                ng-required="string"
+                ng-minlength="1"
+                ng-maxlength="15"
+                >
+            </div>
+            <div class="user-input">
+                    <label>Password</label>
+                    <input type="text"
+                    ng-required="string"
+                    ng-minlength="1"
+                    ng-maxlength="15"
+                    >
+                </div>
+        </div>
+        
+        <div class="btn-block-1-2" style=" float: right; right: 5vw; position: relative;">
+            <button >Submit</button>
+            <button>Clear</button>
+        </div>
+</div>
