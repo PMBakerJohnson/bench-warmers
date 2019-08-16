@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import{ HttpClientModule } from '@angular/common/http';
-//import {StorageServiceModule } from 'angular-webstorage-service'
+import {StorageServiceModule } from 'angular-webstorage-service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +11,7 @@ import { CharacterCreatorComponent } from './character-creator/character-creator
 import { ApiConnectionService } from './api-connection.service';
 import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,9 @@ import { IndexComponent } from './index/index.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    //StorageServiceModule
+    StorageServiceModule
   ],
-  providers: [ApiConnectionService],
+  providers: [ApiConnectionService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
