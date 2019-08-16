@@ -12,6 +12,7 @@ import { ApiConnectionService } from './api-connection.service';
 import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { UserService } from './user.service';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserService } from './user.service';
     RegisterComponent,
     CharacterListComponent,
     CharacterCreatorComponent,
-    IndexComponent
+    IndexComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,
