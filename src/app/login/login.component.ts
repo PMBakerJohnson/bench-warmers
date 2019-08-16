@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private apiConnection: ApiConnectionService, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
+    
   }
 
   login() {
