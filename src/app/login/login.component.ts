@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
   login() {
       if (this.apiConnection.checkLogin(this.userLogin.get('username').toString(), this.userLogin.get('password').toString())) {
         this.isValid(this.userLogin.get('username').toString());
+      } else {
+        window.alert('Login failed, please try again!');
       }
     }
 
