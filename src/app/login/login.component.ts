@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ApiConnectionService } from '../api-connection.service';
+import { HtmlParser } from '@angular/compiler';
+import { element, template } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(private apiConnection: ApiConnectionService) { }
 
   ngOnInit() {
-    
+    var indexBtn = document.getElementById("login/Reg");
+    indexBtn.style.display = "none";
   }
 
   login() {
