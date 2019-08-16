@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Character } from '../mock-character';
 
 @Component({
   selector: 'app-user-page',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
+
+  username = "UserOne";
+
+    Characters: Character[] = [
+    {name: 'One', health: 10},
+    {name: 'Two', health: 10},
+    {name: 'Three', health: 10}
+  ];
 
   constructor() { }
 

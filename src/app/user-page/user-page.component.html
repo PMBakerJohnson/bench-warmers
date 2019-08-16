@@ -1,0 +1,13 @@
+<h2 style="width: 305;">Welcome {{username}}</h2>
+
+    <nav id="nav-bar">
+        <div id="indexBtn" class="btn-block-1-2" style="float: right">
+            <a routerLink="/index"><button>Home</button></a>
+        </div>
+      </nav>
+      <div class="list">
+        <div *ngFor="let Character of Characters" class="list-item">
+          <h4>Name: {{Character.name}}</h4>
+          <p> Health: {{Character.health}}</p>
+        </div>
+      </div>
