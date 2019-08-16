@@ -15,17 +15,17 @@ export class LoginComponent implements OnInit {
     password: new FormControl('')
   });
 
-  //constructor(private apiConnection: ApiConnectionService, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+  constructor(private apiConnection: ApiConnectionService, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
   }
-  /*login() {
+  login() {
       if (this.apiConnection.checkLogin(this.userLogin.get('username').toString(), this.userLogin.get('password').toString())) {
         this.isValid(this.userLogin.get('username').toString());
       }
     }
-*/
+
   isValid(validUsername: string) {
-    //this.storage.set('username', validUsername);
+    this.storage.set('username', validUsername);
   }
 }
