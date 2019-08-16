@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiConnectionService {
-  valid: boolean
+  valid: boolean;
 
   constructor(private httpClient: HttpClient) { }
 
   checkLogin(username: string, password: string) {
     const params = {
-      username = this.username,
-      password = this.password
-    }
+      username: username,
+      password: password
+    };
     this.httpClient.get<boolean>('http:/localhost:44314/api/values/', { params })
     .subscribe((data: any) => { this.valid = data.valid; });
     return this.valid;
