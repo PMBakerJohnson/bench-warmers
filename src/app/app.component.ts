@@ -10,10 +10,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'bench-warmers';
 
-  newRoute(route: string){
-    this.router.navigate([route]);
-  }
-
   constructor(private apiConnection: ApiConnectionService, private router: Router) {
 
   }

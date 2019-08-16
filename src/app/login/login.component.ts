@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private apiConnection: ApiConnectionService) { }
 
   ngOnInit() {
+    
   }
 
   login() {
