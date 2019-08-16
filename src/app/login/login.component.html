@@ -1,20 +1,21 @@
 <h2>Login</h2>
 
     <div style="width: 25%; float: right;">
-        
+
             <nav id="nav-bar">
                     <div id="indexBtn" class="btn-block-1-2" style="float: right">
                         <a routerLink="/index"><button >Home</button></a>
                         <a routerLink="/register"><button>Register</button></a>
                     </div>
                 </nav>
-        <div class="input-1-2">
+        <div class="input-1-2" [formGroup]="userLogin">
             <div class="user-input">
                 <label>Username</label>
                 <input type="text"
                 ng-required="string"
                 ng-minlength="1"
                 ng-maxlength="15"
+                formControlName="username"
                 >
             </div>
             <div class="user-input">
@@ -23,6 +24,7 @@
                     ng-required="string"
                     ng-minlength="1"
                     ng-maxlength="15"
+                    formControlName="password"
                     >
                 </div>
         </div>
@@ -30,5 +32,6 @@
         <div class="btn-block-1-2" style=" float: right; right: 9vw; position: relative;">
             <a routerLink="/user"><button>Submit</button></a>
             <button>Clear</button>
-        </div>
+          </div>
+     </div>
 </div>

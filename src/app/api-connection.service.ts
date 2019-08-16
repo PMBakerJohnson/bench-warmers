@@ -11,7 +11,11 @@ export class ApiConnectionService {
   constructor(private httpClient: HttpClient) { }
 
   checkLogin(username: string, password: string) {
-    this.httpClient.post('http:/localhost:44314/login/', 'username=' + username + '&password=' + password)
+    const params = {
+      username: username,
+      password: password
+    };
+    this.httpClient.get<boolean>('http:/localhost:44314/api/values/', { params })
     .subscribe((data: any) => { this.valid = data.valid; });
     return this.valid;
   }
