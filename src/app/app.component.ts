@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiConnectionService } from './api-connection.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,11 @@ import { ApiConnectionService } from './api-connection.service';
 export class AppComponent {
   title = 'bench-warmers';
 
-  constructor(private apiConnection: ApiConnectionService) {
+  newRoute(route: string){
+    this.router.navigate([route]);
+  }
+
+  constructor(private apiConnection: ApiConnectionService, private router: Router) {
 
   }
 }
