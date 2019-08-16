@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ApiConnectionService } from '../api-connection.service';
 import { HtmlParser } from '@angular/compiler';
 import { element, template } from '@angular/core/src/render3';
+import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
 
 @Component({
   selector: 'app-login',
@@ -22,9 +23,10 @@ export class LoginComponent implements OnInit {
   login() {
       if (this.apiConnection.checkLogin(this.userLogin.get('username').toString(), this.userLogin.get('password').toString())) {
         this.isValid(this.userLogin.get('username').toString());
+      } else {
+        window.alert('Login failed, please try again!');
       }
     }
-
   isValid(validUsername: string) {
     this.storage.set('username', validUsername);
   }
