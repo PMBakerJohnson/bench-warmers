@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ApiConnectionService } from './api-connection.service';
 
-@describe('ApiConnectionService', () => {
+describe('ApiConnectionService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
