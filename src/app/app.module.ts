@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { CharacterListComponent } from './character-list/character-list.component';
+import { CharacterCreatorComponent } from './character-creator/character-creator.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    CharacterListComponent,
+    CharacterCreatorComponent
   ],
   imports: [
     BrowserModule,
