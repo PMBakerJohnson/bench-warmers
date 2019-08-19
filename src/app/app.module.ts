@@ -29,14 +29,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
-    ReactiveFormsModule,
-    StorageServiceModule,
-    FormsModule
-=======
     FormsModule,
     StorageServiceModule
->>>>>>> f13a085ca478b867987d3f2defdec104b1f6b77e
   ],
   providers: [ApiConnectionService, UserService],
   bootstrap: [AppComponent]
