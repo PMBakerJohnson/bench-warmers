@@ -8,14 +8,15 @@
                         <a routerLink="/register"><button>Register</button></a>
                     </div>
                 </nav>
-        <div class="input-1-2" [formGroup]="userLogin">
+        <div class="input-1-2" #form="ngForm" (ngSubmit)="login(userLogin.value)">
             <div class="user-input">
                 <label>Username</label>
                 <input type="text"
                 ng-required="string"
                 ng-minlength="1"
                 ng-maxlength="15"
-                formControlName="username"
+                name="username"
+                ngModel
                 >
             </div>
 
@@ -25,13 +26,14 @@
                     ng-required="string"
                     ng-minlength="1"
                     ng-maxlength="15"
-                    formControlName="password"
+                    name="password"
+                    ngModel
                     >
                 </div>
         </div>
-        
+
         <div class="btn-block-1-2" style=" float: right; right: 9vw; position: relative;">
-            <a routerLink="/user"><button>Submit</button></a>
+            <button type='submit'>Submit</button>
             <button>Clear</button>
           </div>
      </div>
