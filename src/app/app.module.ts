@@ -9,7 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterCreatorComponent } from './character-creator/character-creator.component';
 import { ApiConnectionService } from './api-connection.service';
-import { ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { FormsModule, FormGroup } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { UserService } from './user.service';
 import { UserPageComponent } from './user-page/user-page.component';
@@ -29,9 +29,14 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+<<<<<<< HEAD
     ReactiveFormsModule,
     StorageServiceModule,
     FormsModule
+=======
+    FormsModule,
+    StorageServiceModule
+>>>>>>> f13a085ca478b867987d3f2defdec104b1f6b77e
   ],
   providers: [ApiConnectionService, UserService],
   bootstrap: [AppComponent]

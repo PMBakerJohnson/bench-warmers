@@ -8,7 +8,7 @@ import { Character } from '../mock-character';
 })
 export class UserPageComponent implements OnInit {
 
-  username = "UserOne";
+  username = 'UserOne';
 
     Characters: Character[] = [
     {name: 'One', health: 10},

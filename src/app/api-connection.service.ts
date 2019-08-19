@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { LoginInfo } from './i-login';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +12,18 @@ export class ApiConnectionService {
 
   constructor(private httpClient: HttpClient) { }
 
-  checkLogin(username: string, password: string) {
+  checkLogin(userLogin: LoginInfo) {
     const params = {
-      username: username,
-      password: password
+      username: userLogin.username,
+      password: userLogin.password
     };
     return this.httpClient.get<boolean>(environment.apiUrl, { params });
   }
 
-  registerUser(username: string, password: string) {
+  registerUser(userLogin: LoginInfo) {
     const params = {
-      username: username,
-      password: password
+      username: userLogin.username,
+      password: userLogin.password
     };
     this.httpClient.post(environment.apiUrl, { params });
   }
