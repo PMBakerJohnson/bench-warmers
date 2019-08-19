@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterCreatorComponent implements OnInit {
 
+  public name="CharacterName";
+  public class="CharacterClass";
+  public placeholder="Placeholder";
+  public placeholder2="Placeholder";
+
   constructor() { }
 
   ngOnInit() {

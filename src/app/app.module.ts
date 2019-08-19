@@ -13,6 +13,7 @@ import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { UserService } from './user.service';
 import { UserPageComponent } from './user-page/user-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserPageComponent } from './user-page/user-page.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    StorageServiceModule
+    StorageServiceModule,
+    FormsModule
   ],
   providers: [ApiConnectionService, UserService],
   bootstrap: [AppComponent]
