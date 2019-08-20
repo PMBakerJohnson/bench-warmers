@@ -14,6 +14,7 @@ import { IndexComponent } from './index/index.component';
 import { UserService } from './user.service';
 import { UserPageComponent } from './user-page/user-page.component';
 import { CharacterInfoComponent } from './character-info/character-info.component';
+import { GameplayComponent } from './gameplay/gameplay.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CharacterInfoComponent } from './character-info/character-info.componen
     CharacterCreatorComponent,
     IndexComponent,
     UserPageComponent,
-    CharacterInfoComponent
+    CharacterInfoComponent,
+    GameplayComponent
     ],
   imports: [
     BrowserModule,
