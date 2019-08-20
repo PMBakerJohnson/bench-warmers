@@ -1,0 +1,16 @@
+<nav>
+  <div>
+    <button (click)="quit()">Quit Game</button>
+  </div>
+</nav>
+
+<div>
+  <div>Display Game Text Here</div>
+  <form ngOnSubmit="submitAction()">
+      <input type="text" id="userInput" [(ngModel)]="action"/>
+      <button type="submit"></button>
+  </form>
+</div>
+<div *ngIf="command === action">
+
+</div>

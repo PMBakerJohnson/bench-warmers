@@ -1,0 +1,31 @@
+<h2>Character Creator</h2>
+
+<div class="btn-block-1-2" style="position: relative; top: 14vw; left: 9vw;">
+    <button>Create</button>
+    <button>Clear</button>
+</div>
+
+<form class="input-2-2" [formGroup]="characterForm" (ngSubmit)="characterSubmit()">
+    <div class="user-input">
+        <label>Character Name</label>
+        <input type="text"
+        ng-required="string"
+        ng-minlength="1"
+        ng-maxlength="15"
+        formControlName="fullname"
+        >
+    </div>
+    <div class="user-input" formGroupName="classidfknavigation">
+        <label>Character Class</label>
+        <input type="text"
+        ng-required="string"
+        ng-minlength="1"
+        ng-maxlength="15"
+        formControlName="classname"
+        >
+    </div>
+    <div class="btn-block-1-2" style=" float: right; right: 9vw; position: relative;">
+      <button type="submit">Submit</button>
+      <button>Clear</button>
+    </div>
+  </form>
