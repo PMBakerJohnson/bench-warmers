@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <li *ngFor="let message of userConsole">
+        {{ message }}
+    </li>
+  </ul>
+</div>
+<div>
+  <button *ngFor="let command of availableCommands">{{ command }}</button>
+</div>

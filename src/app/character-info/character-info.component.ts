@@ -20,4 +20,9 @@ export class CharacterInfoComponent implements OnInit {
     }
   }
 
+  playGame() {
+    this.router.navigate(['../gameplay'], { state: { character: this.character } });
+
+  }
+
 }

@@ -6,6 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { LoginInfo } from './i-login';
 import { CharacterInfo } from './mock-character';
+import { Region } from './mock-map';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,10 @@ export class ApiConnectionService {
     return this.httpClient.post(environment.apiUrl + 'api/characters', { fullname: characterInfo.fullName,
       useridfk: localStorage.getItem('currentUserId'), classidfknavigation: { classname: characterInfo.classIdFkNavigation.className }/*,\
       placeholder: characterInfo.placeholder, placeholder2: characterInfo.placeholder2 */});
+  }
+
+  getAllRegions() {
+    return this.httpClient.get<Region[]>(environment.apiUrl + 'api/regions');
   }
 
   private handleError(error: HttpErrorResponse) {
