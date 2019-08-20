@@ -1,3 +1,19 @@
+<nav id="nav-bar">
+  <div style="float: left">
+    Current Benchwarmer: {{ username }}
+  </div>
+  <div id="indexBtn" class="btn-block-1-2" style="float: right">
+    <div *ngIf="username">
+      <a *ngIf="!listLoaded()" [routerLink]="['../character-list']"><button >Character List</button></a>
+      <a (click)="logout()"><button >Log Out</button></a>
+    </div>
+    <div *ngIf="!username">
+      <a [routerLink]="['../login']"><button >Log In</button></a>
+      <a [routerLink]="['../register']"><button >Register</button></a>
+    </div>
+
+  </div>
+</nav>
 
 
 
@@ -6,6 +22,8 @@
   <a>Youtube</a>
 </footer>
 
+<br/>
+
 <router-outlet>
-    
+
 </router-outlet>

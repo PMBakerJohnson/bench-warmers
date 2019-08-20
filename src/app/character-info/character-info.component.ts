@@ -15,6 +15,9 @@ export class CharacterInfoComponent implements OnInit {
    }
 
   ngOnInit() {
+    if (!localStorage.getItem('currentUser')) {
+      this.router.navigate(['index']);
+    }
   }
 
 }

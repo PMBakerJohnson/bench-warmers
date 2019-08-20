@@ -12,38 +12,18 @@
         ng-required="string"
         ng-minlength="1"
         ng-maxlength="15"
-        formControlName="name"
+        formControlName="fullname"
         >
     </div>
-    <div class="user-input">
+    <div class="user-input" formGroupName="classidfknavigation">
         <label>Character Class</label>
         <input type="text"
         ng-required="string"
         ng-minlength="1"
         ng-maxlength="15"
-        formControlName="class"
+        formControlName="classname"
         >
     </div>
-
-    <div class="user-input">
-        <label>Placeholder</label>
-        <input type="text"
-        ng-required="string"
-        ng-minlength="1"
-        ng-maxlength="15"
-        formControlName="placeholder2"
-        >
-    </div>
-    <div class="user-input">
-        <label>Placeholder Two</label>
-        <input type="text"
-        ng-required="string"
-        ng-minlength="1"
-        ng-maxlength="15"
-        formControlName="placeholder2"
-        >
-    </div>
-
     <div class="btn-block-1-2" style=" float: right; right: 9vw; position: relative;">
       <button type="submit">Submit</button>
       <button>Clear</button>

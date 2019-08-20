@@ -1,6 +1,14 @@
 export interface CharacterInfo {
-    name: string;
-    class: string;
-    placeholder: string;
-    placeholder2: string;
+  characterId: number;
+  fullName: string;
+  userIdFk: number;
+  classIdFk: number;
+  classIdFkNavigation: ClassIdFkNavigation;
+  userIdFkNavigation?: any;
+}
+
+interface ClassIdFkNavigation {
+  classId: number;
+  className: string;
+  characters: any[];
 }

@@ -25,7 +25,7 @@ import { CharacterInfoComponent } from './character-info/character-info.componen
     IndexComponent,
     UserPageComponent,
     CharacterInfoComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

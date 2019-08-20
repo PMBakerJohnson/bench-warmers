@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiConnectionService } from '../api-connection.service';
 import { Router } from '@angular/router';
+import { CharacterInfo } from '../mock-character';
 
 @Component({
   selector: 'app-character-creator',
@@ -11,26 +12,28 @@ import { Router } from '@angular/router';
 export class CharacterCreatorComponent implements OnInit {
 
   characterForm = new FormGroup({
-    name: new FormControl(),
-    class: new FormControl(),
-    placeholder: new FormControl(),
-    placeholder2: new FormControl()
+    fullname: new FormControl(),
+    classidfknavigation: new FormGroup({
+      classname: new FormControl()
+    })
   });
   creationError: string;
 
   constructor(private api: ApiConnectionService, private router: Router) { }
 
   ngOnInit() {
+    if (!localStorage.getItem('currentUser')) {
+      this.router.navigate(['index']);
+    }
   }
 
   characterSubmit() {
-    const characterInfo: {name: string, class: string, placeholder: string,
-      placeholder2: string} = Object.assign({}, this.characterForm.value);
+    const characterInfo: CharacterInfo = Object.assign({}, this.characterForm.value);
 
     this.api.createCharacter(characterInfo)
     .subscribe(data => {
       if (data) {
-        this.router.navigate(['character-info'], { state: { character: data } });
+        this.router.navigate(['character-info'], { state: { character: characterInfo } });
       } else {
         this.creationError = 'Character creation failed, please try again!';
       }

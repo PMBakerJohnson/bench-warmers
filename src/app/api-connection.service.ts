@@ -20,9 +20,10 @@ export class ApiConnectionService {
 
     return this.httpClient.post<any>(environment.apiUrl + 'login',
     { username: userLogin.username, upassword: userLogin.password })
-    .pipe(map(user => {
-      if (user) {
+    .pipe(map(userID => {
+      if (userID) {
         localStorage.setItem('currentUser', userLogin.username);
+        localStorage.setItem('currentUserId', userID);
       }
     }),
     catchError(this.handleError)
@@ -43,19 +44,21 @@ export class ApiConnectionService {
 
   logout() {
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUserId');
   }
 
   registerUser(userLogin: LoginInfo) {
-    return this.httpClient.post(environment.apiUrl + '/register', { username: userLogin.username, upassword: userLogin.password });
+    return this.httpClient.post(environment.apiUrl + 'register', { username: userLogin.username, upassword: userLogin.password });
   }
 
   getCharacterList() {
-    return this.httpClient.get<CharacterInfo[]>(environment.apiUrl + '/api/Characters/' + localStorage.getItem('currentUser'))
+    return this.httpClient.get<CharacterInfo[]>(environment.apiUrl + 'api/Characters/' + localStorage.getItem('currentUserId'));
   }
 
-  createCharacter(characterInfo) {
-    return this.httpClient.post(environment.apiUrl + '/api/characters', { fullname: characterInfo.name, classname: characterInfo.password/*,
-    placeholder: characterInfo.placeholder, placeholder2: characterInfo.placeholder2 */});
+  createCharacter(characterInfo: CharacterInfo) {
+    return this.httpClient.post(environment.apiUrl + 'api/characters', { fullname: characterInfo.fullName,
+      useridfk: localStorage.getItem('currentUserId'), classidfknavigation: { classname: characterInfo.classIdFkNavigation.className }/*,\
+      placeholder: characterInfo.placeholder, placeholder2: characterInfo.placeholder2 */});
   }
 
   private handleError(error: HttpErrorResponse) {

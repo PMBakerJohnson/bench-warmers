@@ -1,5 +1,7 @@
+
 <div *ngIf="character">
-  <h4>{{ character.name }} the {{ character.class }}</h4>
-  <p>Placeholder: {{ character.placeholder }}</p>
-  <p>Placeholder2: {{ character.placeholder2 }}</p>
+  <h4>{{ character.fullName }} the {{ character.classIdFkNavigation.className }}</h4>
 </div>
+
+<a routerLink="../play"><button>Play as this Character</button></a>
+
