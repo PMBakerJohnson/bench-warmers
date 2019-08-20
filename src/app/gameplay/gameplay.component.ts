@@ -47,7 +47,9 @@ export class GameplayComponent {
         this.userConsole.push('What item would you like to use?');
         this.newPrompt();
         break;
-      case ''
+      case '':
+
+        break;
     }
   }
 
