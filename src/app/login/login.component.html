@@ -9,7 +9,7 @@
                     </div>
                 </nav>
 
-        <form class="input-1-2" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+        <form class="input-1-2" [formGroup]="loginForm" (ngSubmit)="login()">
           <p *ngIf="loginError">{{ loginError }}</p>
             <div class="user-input">
                 <label>Username</label>

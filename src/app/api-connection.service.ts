@@ -5,6 +5,7 @@ import { throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { LoginInfo } from './i-login';
+import { CharacterInfo } from './mock-character';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,15 @@ export class ApiConnectionService {
 
   registerUser(userLogin: LoginInfo) {
     return this.httpClient.post(environment.apiUrl + '/register', { username: userLogin.username, upassword: userLogin.password });
+  }
+
+  getCharacterList() {
+    return this.httpClient.get<CharacterInfo[]>(environment.apiUrl + '/api/Characters/' + localStorage.getItem('currentUser'))
+  }
+
+  createCharacter(characterInfo) {
+    return this.httpClient.post(environment.apiUrl + '/api/characters', { fullname: characterInfo.name, classname: characterInfo.password/*,
+    placeholder: characterInfo.placeholder, placeholder2: characterInfo.placeholder2 */});
   }
 
   private handleError(error: HttpErrorResponse) {

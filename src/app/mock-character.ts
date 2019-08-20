@@ -1,4 +1,6 @@
-export class Character{
+export interface CharacterInfo {
     name: string;
-    health: number;
+    class: string;
+    placeholder: string;
+    placeholder2: string;
 }

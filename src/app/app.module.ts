@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { UserService } from './user.service';
 import { UserPageComponent } from './user-page/user-page.component';
+import { CharacterInfoComponent } from './character-info/character-info.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserPageComponent } from './user-page/user-page.component';
     CharacterListComponent,
     CharacterCreatorComponent,
     IndexComponent,
-    UserPageComponent
+    UserPageComponent,
+    CharacterInfoComponent
   ],
   imports: [
     BrowserModule,

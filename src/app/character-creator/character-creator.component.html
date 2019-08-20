@@ -1,49 +1,51 @@
 <h2>Character Creator</h2>
 
-<div class="info-box" style="position: absolute; left: 10vw;">
-    <h3>{{name}}</h3>
-    <p>Class: {{class}}</p>
-    <p>Placeholder: {{placeholder}}</p>
-    <p>Placeholder 2: {{placeholder2}} </p>
-</div>
 <div class="btn-block-1-2" style="position: relative; top: 14vw; left: 9vw;">
     <button>Create</button>
     <button>Clear</button>
 </div>
 
-<div class="input-2-2">
+<form class="input-2-2" [formGroup]="characterForm" (ngSubmit)="characterSubmit()">
     <div class="user-input">
         <label>Character Name</label>
-        <input [(ngModel)]="name" type="text"
+        <input type="text"
         ng-required="string"
         ng-minlength="1"
         ng-maxlength="15"
+        formControlName="name"
         >
     </div>
     <div class="user-input">
         <label>Character Class</label>
-        <input [(ngModel)]="class" type="text"
+        <input type="text"
         ng-required="string"
         ng-minlength="1"
         ng-maxlength="15"
+        formControlName="class"
         >
     </div>
 
     <div class="user-input">
         <label>Placeholder</label>
-        <input [(ngModel)]="placeholder" type="text"
+        <input type="text"
         ng-required="string"
         ng-minlength="1"
         ng-maxlength="15"
+        formControlName="placeholder2"
         >
     </div>
     <div class="user-input">
         <label>Placeholder Two</label>
-        <input [(ngModel)]="placeholder2" type="text"
+        <input type="text"
         ng-required="string"
         ng-minlength="1"
         ng-maxlength="15"
+        formControlName="placeholder2"
         >
     </div>
-</div>
-    
+
+    <div class="btn-block-1-2" style=" float: right; right: 9vw; position: relative;">
+      <button type="submit">Submit</button>
+      <button>Clear</button>
+    </div>
+  </form>
