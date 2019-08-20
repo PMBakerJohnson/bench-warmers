@@ -7,8 +7,8 @@ import { ActionBreakdown } from '../action-breakdown';
 
 @Component({
   selector: 'app-gameplay',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './gameplay.component.html',
+  styleUrls: ['./gameplay.component.css']
 })
 export class GameplayComponent {
   title = 'bench-warmers';
