@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
 
     if(this.apiConnection.registerUser(userInfo)){
       this.storage.set('username', this.userRegister.get('username').toString());
-      this.router.navigate(['character-creator']);
+      this.router.navigate(['createCharacter']);
     }
   }
 }
