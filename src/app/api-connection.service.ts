@@ -18,12 +18,12 @@ export class ApiConnectionService {
 
   login(userLogin: LoginInfo) {
 
-    return this.httpClient.post<any>(environment.apiUrl + 'login',
+    return this.httpClient.post<number>(environment.apiUrl + 'login',
     { username: userLogin.username, upassword: userLogin.password })
     .pipe(map(userID => {
       if (userID) {
         localStorage.setItem('currentUser', userLogin.username);
-        localStorage.setItem('currentUserId', userID);
+        localStorage.setItem('currentUserId', userID.toString());
       }
     }),
     catchError(this.handleError)
@@ -48,7 +48,7 @@ export class ApiConnectionService {
   }
 
   registerUser(userLogin: LoginInfo) {
-    return this.httpClient.post(environment.apiUrl + 'register', { username: userLogin.username, upassword: userLogin.password });
+    return this.httpClient.post<number>(environment.apiUrl + 'register', { username: userLogin.username, upassword: userLogin.password });
   }
 
   getCharacterList() {

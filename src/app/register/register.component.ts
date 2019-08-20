@@ -24,9 +24,16 @@ export class RegisterComponent implements OnInit {
   register() {
     const userInfo: {username: string, password: string} = Object.assign({}, this.userRegister.value);
 
-    if(this.apiConnection.registerUser(userInfo)){
-      this.storage.set('username', this.userRegister.get('username').toString());
-      this.router.navigate(['createCharacter']);
-    }
+    this.apiConnection.registerUser(userInfo).subscribe(data => {
+      if ( data === -1) {
+        window.alert('That username is taken, please try again!');
+      } else if (data === 0) {
+        window.alert('There was an error, please try again!');
+      } else {
+        localStorage.setItem('currentUser', userInfo.username);
+        localStorage.setItem('currentUserId', data.toString());
+        this.router.navigate(['createCharacter']);
+      }
+    });
   }
 }
