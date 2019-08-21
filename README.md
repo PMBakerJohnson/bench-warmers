@@ -7,7 +7,7 @@ I got nothing. We're flying by the seat of our pants. As of writing this (8/21),
 
 ## Team Members
 Our current team is comprised of (going off of Github usernames)
-carletonDev
-lily-ayers
-XavierRichardson
-and yours truly, PMBakerJohnson.
+- carletonDev
+- lily-ayers
+- XavierRichardson
+- and yours truly, PMBakerJohnson.
