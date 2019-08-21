@@ -1,9 +1,6 @@
 <h2>Character Creator</h2>
 
-<div class="btn-block-1-2" style="position: relative; top: 14vw; left: 9vw;">
-    <button>Create</button>
-    <button>Clear</button>
-</div>
+<p *ngIf="creationError">{{ creationError }}</p>
 
 <form class="input-2-2" [formGroup]="characterForm" (ngSubmit)="characterSubmit()">
     <div class="user-input">
