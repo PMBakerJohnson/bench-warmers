@@ -1,27 +1,13 @@
 # BenchWarmers
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+This is the front end of a project put together by several Onshore employees that are currently not working on any projects to keep us busy and give us hands on experience with specific technologies. Our current vision is of a text based RPG with some idle mechanics.
 
-## Development server
+## Roadmap
+I got nothing. We're flying by the seat of our pants. As of writing this (8/21), we're hoping to have a big planning meeting tomorrow to communicate our long term goals for this project, but it's also looking very likely that we might be pushed into doing something different.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Team Members
+Our current team is comprised of (going off of Github usernames)
+carletonDev
+lily-ayers
+XavierRichardson
+and yours truly, PMBakerJohnson.
