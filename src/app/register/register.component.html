@@ -1,0 +1,31 @@
+<h2>Register</h2>
+
+    <div style="width: 25%; float: right;">
+
+        <form class="input-1-2" [formGroup]="userRegister" (ngSubmit)="register()" novalidate>
+            <div class="user-input">
+                <label>Username</label>
+                <input type="text"
+                ng-required="string"
+                ng-minlength="1"
+                ng-maxlength="15"
+                formControlName="username"
+                >
+            </div>
+            <div class="user-input">
+                    <label>Password</label>
+                    <input type="text"
+                    ng-required="string"
+                    ng-minlength="1"
+                    ng-maxlength="15"
+                    formControlName="password"
+                    >
+                </div>
+
+            <div class="btn-block-1-2" style=" float: right; right: 9vw; position: relative;">
+              <button type="submit">Submit</button>
+              <button>Clear</button>
+            </div>
+          </form>
+
+    </div>

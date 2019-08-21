@@ -6,9 +6,9 @@ h1{
     width: 50%;
     text-align: center;
     font-size: 4em;
-    position: relative;
-    left: 25%;
-    top: 1vw;
+    position: relative; 
+    left: 25%;   
+    top: 1vw; 
     background-color: lightgray;
     border-radius: 7px;
 }
@@ -17,8 +17,8 @@ button{
     border: 1px solid slategray;
     padding: 3px; margin: 5px;
     width: 10vw;
-    height: 3.5vh;
-    font-size: 2vh;
+    height: 2vw;
+    font-size: 1vw;
     font-style: none;
     border-radius: 3px;
     background-image: linear-gradient(to bottom right, gray, white);
@@ -52,7 +52,7 @@ footer a{
     top: 0;
     left: 0;
     background-color: darkslategray;
-    height: 5.5vh;
+    height: 3vw;
     width: 100%;
     padding: 0;
 }
@@ -62,9 +62,7 @@ footer a{
     /*1 row*/
         /*button blocks*/
 .btn-block-1-2{
-    padding: 2px;
+    padding: 2px; 
     width: auto;
     height: 2.1vw;
 }
-
-

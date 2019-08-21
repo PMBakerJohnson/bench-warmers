@@ -1,0 +1,10 @@
+<div style="padding-top: 6vh">
+
+  <div *ngFor="let character of characters">
+      <p>{{ character.fullName }}</p>
+      <p>the {{ character.classIdFkNavigation.className }}</p>
+      <button (click)="getInfo(character)" class="button">Select</button>
+  </div>
+
+  <a routerLink="../createCharacter"><button>Create Character</button></a>
+</div>
