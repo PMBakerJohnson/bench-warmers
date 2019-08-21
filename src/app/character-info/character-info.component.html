@@ -1,7 +1,7 @@
+<div style="padding-top: 6vh">
+  <div *ngIf="character">
+    <h4>{{ character.fullName }} the {{ character.classIdFkNavigation.className }}</h4>
+  </div>
 
-<div *ngIf="character">
-  <h4>{{ character.fullName }} the {{ character.classIdFkNavigation.className }}</h4>
+  <a routerLink="../play"><button>Play</button></a>
 </div>
-
-<a routerLink="../play"><button>Play as this Character</button></a>
-
