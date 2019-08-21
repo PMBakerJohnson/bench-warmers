@@ -27,8 +27,7 @@ export class ApiConnectionService {
         localStorage.setItem('currentUserId', userID.toString());
       }
     }),
-    catchError(this.handleError)
-    );
+    catchError(err => this.handleError(err)));
   }
 
   isLoggedIn() {
@@ -49,21 +48,29 @@ export class ApiConnectionService {
   }
 
   registerUser(userLogin: LoginInfo) {
-    return this.httpClient.post<number>(environment.apiUrl + 'register', { username: userLogin.username, upassword: userLogin.password });
+    return this.httpClient.post<number>(environment.apiUrl + 'register', { username: userLogin.username, upassword: userLogin.password })
+    .pipe(
+      catchError(err => this.handleError(err)));
   }
 
   getCharacterList() {
-    return this.httpClient.get<CharacterInfo[]>(environment.apiUrl + 'api/Characters/' + localStorage.getItem('currentUserId'));
+    return this.httpClient.get<CharacterInfo[]>(environment.apiUrl + 'api/Characters/' + localStorage.getItem('currentUserId'))
+    .pipe(
+      catchError(err => this.handleError(err)));
   }
 
   createCharacter(characterInfo: CharacterInfo) {
     return this.httpClient.post(environment.apiUrl + 'api/characters', { fullname: characterInfo.fullName,
       useridfk: localStorage.getItem('currentUserId'), classidfknavigation: { classname: characterInfo.classIdFkNavigation.className }/*,\
-      placeholder: characterInfo.placeholder, placeholder2: characterInfo.placeholder2 */});
+      placeholder: characterInfo.placeholder, placeholder2: characterInfo.placeholder2 */})
+      .pipe(
+        catchError(err => this.handleError(err)));
   }
 
   getAllRegions() {
-    return this.httpClient.get<Region[]>(environment.apiUrl + 'api/regions');
+    return this.httpClient.get<Region[]>(environment.apiUrl + 'api/regions')
+    .pipe(
+      catchError(err => this.handleError(err)));
   }
 
   private handleError(error: HttpErrorResponse) {
