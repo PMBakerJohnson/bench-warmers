@@ -1,0 +1,16 @@
+.dev-info-header h5 {
+	margin: 0em;
+}
+
+.dev-info-header h3 {
+	margin-top: 0em;
+}
+
+.dev-info-header {
+	padding-left: 2em;
+}
+
+.dev-info {
+	background-color: darkgray;
+	padding: 10px;
+}

@@ -23,8 +23,12 @@ export class LoginComponent implements OnInit {
     password: ['']
   });
 
-  constructor(private apiConnection: ApiConnectionService, private router: Router, private fb: FormBuilder,
-    @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+  constructor(
+    private apiConnection: ApiConnectionService, 
+    private router: Router, 
+    private fb: FormBuilder,
+    @Inject(LOCAL_STORAGE) private storage: WebStorageService
+  ) {}
 
   ngOnInit() {
   }

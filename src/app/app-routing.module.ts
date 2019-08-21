@@ -8,6 +8,7 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { CharacterCreatorComponent } from './character-creator/character-creator.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterInfoComponent } from './character-info/character-info.component';
+import { CreditsComponent } from './credits/credits.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'user', component: UserPageComponent},
   {path: 'createCharacter', component: CharacterCreatorComponent},
   {path: 'character-list', component: CharacterListComponent},
-  {path: 'character-info', component: CharacterInfoComponent}
+  {path: 'character-info', component: CharacterInfoComponent},
+  {path: 'credits', component: CreditsComponent}
 ];
 
 @NgModule({

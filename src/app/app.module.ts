@@ -15,6 +15,7 @@ import { UserService } from './user.service';
 import { UserPageComponent } from './user-page/user-page.component';
 import { CharacterInfoComponent } from './character-info/character-info.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GameplayComponent } from './gameplay/gameplay.component';
     IndexComponent,
     UserPageComponent,
     CharacterInfoComponent,
-    GameplayComponent
+    GameplayComponent,
+    CreditsComponent
     ],
   imports: [
     BrowserModule,
