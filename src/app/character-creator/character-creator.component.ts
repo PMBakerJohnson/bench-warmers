@@ -12,9 +12,9 @@ import { CharacterInfo } from '../mock-character';
 export class CharacterCreatorComponent implements OnInit {
 
   characterForm = new FormGroup({
-    fullname: new FormControl(),
-    classidfknavigation: new FormGroup({
-      classname: new FormControl()
+    fullName: new FormControl(),
+    classIdFkNavigation: new FormGroup({
+      className: new FormControl()
     })
   });
   creationError: string;
