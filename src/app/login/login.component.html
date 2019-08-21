@@ -2,13 +2,6 @@
 
     <div style="width: 25%; float: right;">
 
-            <nav id="nav-bar">
-                    <div id="indexBtn" class="btn-block-1-2" style="float: right">
-                        <a routerLink="/index"><button >Home</button></a>
-                        <a routerLink="/register"><button>Register</button></a>
-                    </div>
-                </nav>
-
         <form class="input-1-2" [formGroup]="loginForm" (ngSubmit)="login()">
           <p *ngIf="loginError">{{ loginError }}</p>
             <div class="user-input">
