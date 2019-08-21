@@ -15,14 +15,13 @@
         formControlName="fullName"
         >
     </div>
-    <div class="user-input" formGroupName="classIdFkNavigation">
+    <div class="user-input">
         <label>Character Class</label>
-        <input type="text"
-        ng-required="string"
-        ng-minlength="1"
-        ng-maxlength="15"
-        formControlName="className"
-        >
+        <select formControlName="classIndex">
+          <option *ngFor="let class of classes; let i = index" [value]="i">
+            {{ class.className }}
+          </option>
+        </select>
     </div>
     <div class="btn-block-1-2" style=" float: right; right: 9vw; position: relative;">
       <button type="submit">Submit</button>

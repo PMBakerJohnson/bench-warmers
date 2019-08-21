@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CharacterInfo } from '../mock-character';
+import { CharacterInfo } from '../character-interface';
 
 @Component({
   selector: 'app-character-info',

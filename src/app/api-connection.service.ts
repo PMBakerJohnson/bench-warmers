@@ -5,7 +5,8 @@ import { throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { LoginInfo } from './i-login';
-import { CharacterInfo } from './mock-character';
+import { CharacterInfo } from './character-interface';
+import { ClassInfo } from './class-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,8 @@ export class ApiConnectionService {
   errorData: {};
 
   constructor(private httpClient: HttpClient) { }
+
+  // USER FUNCTIONS
 
   login(userLogin: LoginInfo) {
 
@@ -51,14 +54,20 @@ export class ApiConnectionService {
     return this.httpClient.post<number>(environment.apiUrl + 'register', { username: userLogin.username, upassword: userLogin.password });
   }
 
+  // CHARACTER FUNCTIONS
+
   getCharacterList() {
     return this.httpClient.get<CharacterInfo[]>(environment.apiUrl + 'api/Characters/' + localStorage.getItem('currentUserId'));
   }
 
   createCharacter(characterInfo: CharacterInfo) {
-    return this.httpClient.post(environment.apiUrl + 'api/characters', { fullname: characterInfo.fullName,
-      useridfk: localStorage.getItem('currentUserId'), classidfknavigation: { classname: characterInfo.classIdFkNavigation.className }/*,\
-      placeholder: characterInfo.placeholder, placeholder2: characterInfo.placeholder2 */});
+    return this.httpClient.post<number>(environment.apiUrl + 'api/characters', characterInfo );
+  }
+
+  // CLASS FUNCTIONS
+
+  getClasses() {
+    return this.httpClient.get<ClassInfo[]>(environment.apiUrl + 'api/classes');
   }
 
   private handleError(error: HttpErrorResponse) {

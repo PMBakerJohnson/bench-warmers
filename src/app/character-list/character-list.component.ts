@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterInfo } from '../mock-character';
+import { CharacterInfo } from '../character-interface';
 import { ApiConnectionService } from '../api-connection.service';
 import { Router } from '@angular/router';
 

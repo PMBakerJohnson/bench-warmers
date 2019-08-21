@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterInfo } from '../mock-character';
+import { CharacterInfo } from '../character-interface';
 
 @Component({
   selector: 'app-user-page',

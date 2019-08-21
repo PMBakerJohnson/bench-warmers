@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     const userInfo: {username: string, password: string} = Object.assign({}, this.loginForm.value);
       this.apiConnection.login(userInfo)
         .subscribe((data) => {
-          if (this.apiConnection.isLoggedIn) {
+          if (this.apiConnection.isLoggedIn()) {
             this.router.navigate(['character-list']);
           } else {
             this.loginError = 'Username or Password is Incorrect.';
