@@ -1,10 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    background-color: gray;
+    background-color: black;
 }
-
-
 
 /*global*/
 
@@ -13,9 +11,9 @@ h2{
     width: 25%;
     text-align: center;
     font-size: 4vw;
-    position: relative; 
-    left: 10%;   
-    top: 1vw; 
+    position: relative;
+    left: 10%;
+    top: 1vw;
     background-color: lightgray;
     border-radius: 7px;
 }
@@ -59,20 +57,25 @@ label{
     background-color: lightgray;
     position: relative;
     display: block;
+    font-size: 1.5vw;
     width: 15vw;
     height: 1.7vw;
     text-align: center;
     transform: skew(-20deg);
     border-radius: 10px 3px 10px 3px;
     margin: 5px;
-    
+
 }
 
 input{
     border: 2px solid black;
     width: 25vw;
     height: 1.7vw;
-    background-color: silver;
+    background-color: darkslategray;
+}
+
+input:focus {
+  background-color: silver;
 }
 
 /*Id and class*/
@@ -123,7 +126,7 @@ input{
     /*Common list*/
 .list{
     border: 1px solid black;
-    width: 30vw; 
+    width: 30vw;
     height: 25vw;
     overflow-y: scroll;
     float: right;
@@ -149,7 +152,7 @@ input{
     /*1 row*/
         /*button blocks*/
 .btn-block-1-2{
-    padding: 2px; 
+    padding: 2px;
     width: auto;
     height: 2.1vw;
 }

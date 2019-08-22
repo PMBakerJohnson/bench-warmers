@@ -4,6 +4,7 @@ import { ApiConnectionService } from '../api-connection.service';
 import { Router } from '@angular/router';
 import { CharacterInfo } from '../character-interface';
 import { ClassInfo } from '../class-interface';
+import { WorldStateService } from '../world-state.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -19,13 +20,13 @@ export class CharacterCreatorComponent implements OnInit {
   classes: ClassInfo[];
   creationError: string;
 
-  constructor(private api: ApiConnectionService, private router: Router) { }
+  constructor(private api: ApiConnectionService, private router: Router, private state: WorldStateService) { }
 
   ngOnInit() {
     if (!localStorage.getItem('currentUser')) {
       this.router.navigate(['index']);
     } else {
-      this.api.getClasses().subscribe(data => this.classes = data)
+      this.api.getClasses().subscribe(data => this.classes = data);
     }
   }
 
@@ -40,7 +41,8 @@ export class CharacterCreatorComponent implements OnInit {
     this.api.createCharacter(characterInfo)
     .subscribe(data => {
       if (data > 0) {
-        this.router.navigate(['character-info'], { state: { character: characterInfo } });
+        this.state.character = characterInfo;
+        this.router.navigate(['character-list']);
       } else if (data === -1) {
         this.creationError = 'You already have a character of that name and class!';
       } else {

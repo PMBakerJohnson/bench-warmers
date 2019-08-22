@@ -12,9 +12,8 @@ import { ApiConnectionService } from './api-connection.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { UserService } from './user.service';
-import { UserPageComponent } from './user-page/user-page.component';
-import { CharacterInfoComponent } from './character-info/character-info.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
+import { ClickOutsideDirective } from './click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -24,9 +23,8 @@ import { GameplayComponent } from './gameplay/gameplay.component';
     CharacterListComponent,
     CharacterCreatorComponent,
     IndexComponent,
-    UserPageComponent,
-    CharacterInfoComponent,
-    GameplayComponent
+    GameplayComponent,
+    ClickOutsideDirective
     ],
   imports: [
     BrowserModule,

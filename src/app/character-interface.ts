@@ -7,4 +7,5 @@ export interface CharacterInfo {
   classIdFk?: number;
   classIdFkNavigation?: ClassInfo;
   userIdFkNavigation?: any;
+  selected?: boolean;
 }

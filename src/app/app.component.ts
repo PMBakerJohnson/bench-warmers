@@ -10,11 +10,13 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'bench-warmers';
   username = localStorage.getItem('currentUser');
+  loaded: string;
 
   constructor(private apiConnection: ApiConnectionService, private router: Router) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.username = localStorage.getItem('currentUser');
+        this.loaded = router.url;
       }
     });
   }

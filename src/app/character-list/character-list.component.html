@@ -1,10 +1,10 @@
-<div style="padding-top: 6vh">
+<div style="padding-top: 6vh" class="grid grid-pad">
 
-  <div *ngFor="let character of characters">
-      <p>{{ character.fullName }}</p>
-      <p>the {{ character.classIdFkNavigation.className }}</p>
-      <button (click)="getInfo(character)" class="button">Select</button>
+    <div *ngFor="let character of characters"  [ngClass]="{'selected' :character.selected}" class="col-1-4" clickOutside (clickOutside)="character.selected = false" (click)="select(character)">
+        <p>{{ character.fullName }}</p>
+        <p>the {{ character.classIdFkNavigation.className }}</p>
+        <button *ngIf="!character.selected" (click)="select(character)" class="button">Select</button>
+        <a *ngIf="character.selected" routerLink="../play"><button>Play</button></a>
+    </div>
+    <a *ngIf="!selected" routerLink="../createCharacter"><button>Create Character</button></a>
   </div>
-
-  <a routerLink="../createCharacter"><button>Create Character</button></a>
-</div>

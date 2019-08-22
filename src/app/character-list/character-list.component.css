@@ -1,0 +1,38 @@
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  width: 12.5%;
+  height: 30%;
+  color: white;
+  background-image: radial-gradient(rgb(33, 27, 53), black, rgb(21, 18, 48))
+
+}
+.selected {
+  border: 2px solid darkblue;
+  border-radius: 10px;
+  text-align: center;
+  width: 25.5%;
+  height: 30%;
+  color: white;
+  background-image: radial-gradient(darkblue, black, darkslateblue)
+}
+.grid-pad {
+  padding: 10px 0;
+}

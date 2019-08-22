@@ -1,15 +1,15 @@
 <nav id="nav-bar">
-  <div style="float: left; font-size: 3vh">
+  <div *ngIf="username" style="float: left; font-size: 3vh">
     Current Benchwarmer: {{ username }}
   </div>
   <div id="indexBtn" class="btn-block-1-2" style="float: right">
     <div *ngIf="username">
-      <a *ngIf="!listLoaded()" [routerLink]="['../character-list']"><button >Character List</button></a>
+      <a *ngIf="loaded !== '/character-list'" [routerLink]="['../character-list']"><button >Character List</button></a>
       <a (click)="logout()"><button >Log Out</button></a>
     </div>
     <div *ngIf="!username">
-      <a [routerLink]="['../login']"><button >Log In</button></a>
-      <a [routerLink]="['../register']"><button >Register</button></a>
+      <a *ngIf="loaded !== '/login'" [routerLink]="['../login']"><button >Log In</button></a>
+      <a *ngIf="loaded !== '/register'" [routerLink]="['../register']"><button >Register</button></a>
     </div>
 
   </div>
@@ -20,10 +20,8 @@
 <footer>
   <a>Facebook</a>
   <a>Youtube</a>
+  <a style="float: right">&copy; Benchwarmers LLC</a>
 </footer>
-
-<br/>
-
-<router-outlet>
-
-</router-outlet>
+<div class="menu">
+  <router-outlet></router-outlet>
+</div>
